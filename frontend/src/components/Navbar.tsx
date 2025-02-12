@@ -102,7 +102,7 @@ const Navbar = () => {
             >
               Buy Crypto
             </Link>
-            {account ? (
+            {!account ? (
               <button
                 onClick={connectWallet}
                 className="px-4 py-2 rounded-lg bg-[#4f46e5] text-white hover:bg-[#3a36d3] transition-all"
