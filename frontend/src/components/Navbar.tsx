@@ -102,23 +102,23 @@ const Navbar = () => {
             >
               Buy Crypto
             </Link>
-            {network != SEPOLIA_CHAIN_ID ? (
-              <button
-                onClick={switchToSepolia}
-                className="px-4 py-2 rounded-lg bg-red-500 text-white hover:bg-red-600 transition-all"
-              >
-                Switch to Sepolia
-              </button>
-            ) : account ? (
-              <span className="px-4 py-2 rounded-lg bg-[#4f46e5] text-white">
-                {shortenAddress(account)}
-              </span>
-            ) : (
+            {account ? (
               <button
                 onClick={connectWallet}
                 className="px-4 py-2 rounded-lg bg-[#4f46e5] text-white hover:bg-[#3a36d3] transition-all"
               >
                 Connect Wallet
+              </button>
+            ) : network == SEPOLIA_CHAIN_ID ? (
+              <span className="px-4 py-2 rounded-lg bg-[#4f46e5] text-white">
+                {shortenAddress(account)}
+              </span>
+            ) : (
+              <button
+                onClick={switchToSepolia}
+                className="px-4 py-2 rounded-lg bg-red-500 text-white hover:bg-red-600 transition-all"
+              >
+                Switch to Sepolia
               </button>
             )}
           </div>
