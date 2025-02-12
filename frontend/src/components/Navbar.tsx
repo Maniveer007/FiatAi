@@ -9,7 +9,7 @@ import { Link, useLocation } from "react-router-dom";
 import { Wallet } from "lucide-react";
 import { ethers } from "ethers";
 
-const SEPOLIA_CHAIN_ID = "aa36a7"; // Sepolia chain ID
+const SEI_CHAIN_ID = "0x530"; // Sepolia chain ID
 
 const Navbar = () => {
   const location = useLocation();
@@ -51,12 +51,12 @@ const Navbar = () => {
     }
   };
 
-  const switchToSepolia = async () => {
+  const switchToSei = async () => {
     if (window.ethereum) {
       try {
         await window.ethereum.request({
           method: "wallet_switchEthereumChain",
-          params: [{ chainId: SEPOLIA_CHAIN_ID }],
+          params: [{ chainId: SEI_CHAIN_ID }],
         });
       } catch (error: any) {
         console.error("Error switching network:", error);
@@ -109,16 +109,16 @@ const Navbar = () => {
               >
                 Connect Wallet
               </button>
-            ) : network == SEPOLIA_CHAIN_ID ? (
+            ) : "0x" + network == SEI_CHAIN_ID ? (
               <span className="px-4 py-2 rounded-lg bg-[#4f46e5] text-white">
                 {shortenAddress(account)}
               </span>
             ) : (
               <button
-                onClick={switchToSepolia}
+                onClick={switchToSei}
                 className="px-4 py-2 rounded-lg bg-red-500 text-white hover:bg-red-600 transition-all"
               >
-                Switch to Sepolia
+                Switch to SEI
               </button>
             )}
           </div>

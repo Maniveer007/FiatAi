@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import { ethers } from "ethers";
 import { CheckCircle, Loader } from "lucide-react";
 
-const CONTRACT_ADDRESS = "0x4640501E12D9856fd74765c83Dab5731410Fcc25";
+const CONTRACT_ADDRESS = "0xb026038aaB3E7f6843B52DAD019291D1564DfcBB";
 const CONTRACT_ABI = [
   "function withdrawTokens(address to, uint256 amount) external",
 ];
@@ -139,12 +139,12 @@ const Success = () => {
 
               {transactionHash && (
                 <a
-                  href={`https://sepolia.etherscan.io/tx/${transactionHash}`}
+                  href={`https://seitrace.com/tx/${transactionHash}?chain=atlantic-2`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="block w-full py-4 px-6 bg-green-500 hover:bg-green-600 text-white font-semibold rounded-lg transition-all duration-200"
                 >
-                  View on Sepolia Explorer
+                  View on SEI Explorer
                 </a>
               )}
             </div>
