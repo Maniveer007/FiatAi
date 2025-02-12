@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import { ethers } from "ethers";
 import { CheckCircle, Loader } from "lucide-react";
 
-const CONTRACT_ADDRESS = "0xe72C3617FA5C45BC06C907Bb6390688A2271181B";
+const CONTRACT_ADDRESS = "0x4640501E12D9856fd74765c83Dab5731410Fcc25";
 const CONTRACT_ABI = [
   "function withdrawTokens(address to, uint256 amount) external",
 ];
